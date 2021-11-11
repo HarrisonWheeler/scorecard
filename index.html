@@ -15,40 +15,41 @@
 
 </head>
 
-<main class="container-fluid">
-  <div class="row bg-danger">
-    <div class="col-md-3 text-light">
-      <div>
-        <p>
-          Players: <span></span>
-        </p>
-        <p>
-          Total Points: <span></span>
-        </p>
+<body class="container-fluid">
+  <main>
+    <div class="row bg-info">
+      <div class="col-md-3 text-light">
+        <div>
+          <p>
+            Players: <span id="totalPlayers"></span>
+          </p>
+          <p>
+            Total Points: <span id="totalPoints"></span>
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 text-light text-center">
+        <h2>SCOREBOARD</h2>
+      </div>
+      <div class="col-md-3">
+        <!-- Maybe a timer or something here? -->
       </div>
     </div>
-    <div class="col-md-6 text-light text-center">
-      <h2>SCOREBOARD</h2>
-    </div>
-    <div class="col-md-3">
-      <!-- Maybe a timer or something here? -->
-    </div>
-  </div>
-  <!-- Player sections -->
-  <div class="row flex-column" id="players">
+    <!-- Player sections -->
+    <div class="row row-height" id="players">
 
-  </div>
-  <!-- Create a player section -->
-  <div class="row bg-danger">
+    </div>
+    <!-- Create a player section -->
+
+  </main>
+
+  <footer class="row bg-info fixed-bottom">
     <div class="col-md-4 p-4">
       <button class="btn btn-success" onclick="addPlayer()">Add Player</button>
+      <button class="btn btn-warning" onclick="reset()">Reset Game</button>
     </div>
-  </div>
+  </footer>
 
-</main>
-
-
-<body>
 
   <!-- Bootstrap JavaScript Libraries -->
   <script src="main.js"></script>

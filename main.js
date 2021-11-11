@@ -7,6 +7,7 @@ function modifyScore(player, modifier) {
     players[player].score--
   }
   drawScore()
+  totalPoints()
 }
 
 function addPlayer() {
@@ -29,16 +30,16 @@ function drawPlayers() {
   let template = ''
   for (p in players) {
     template += `
-      <div class="col">
+      <div class="col-md-6">
         <div class="card-body">
             <div class="d-flex flex-row justify-content-between">
                 <div>
                     <h6>Player ${p}</h6>
                 </div>
               <div>
-            <button class="btn btn-danger" onclick="modifyScore('${p}', '-')">-</button>
-            <span id="${p}">0</span>
-            <button class="btn btn-success" onclick="modifyScore('${p}', '+')">+</button>
+              <button class="btn btn-danger" onclick="modifyScore('${p}', '-')">-</button>
+              <span id="${p}">0</span>
+              <button class="btn btn-success" onclick="modifyScore('${p}', '+')">+</button>
             </div>
           </div>
         </div>
@@ -46,5 +47,31 @@ function drawPlayers() {
   }
   document.getElementById('players').innerHTML = template
   drawScore()
+  totalPlayers()
 }
+
+function totalPlayers() {
+  let totalPlayers = 0
+  for (p in players) {
+    totalPlayers++
+  }
+  document.getElementById('totalPlayers').innerHTML = totalPlayers
+}
+
+function totalPoints() {
+  let totalPoints = 0
+  for (p in players) {
+    totalPoints += players[p].score
+  }
+  document.getElementById('totalPoints').innerHTML = totalPoints
+}
+
+function reset() {
+  players = {}
+  totalPoints()
+  drawPlayers()
+}
+
+totalPoints()
+totalPlayers()
 
