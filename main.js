@@ -1,25 +1,50 @@
-let score1 = 0
+let players = {}
 
-let score2 = 0
-
-function increaseScore(player){
-  if(player == '1'){
-    score1 ++
+function modifyScore(player, modifier) {
+  if (modifier == '+') {
+    players[player].score++
   } else {
-    score2 ++
+    players[player].score--
   }
-  draw()
+  drawScore()
 }
 
-function draw(){
-  document.getElementById('score1').innerHTML = score1
-  document.getElementById('score2').innerHTML = score2
+function addPlayer() {
+  let newPlayerIndex = Object.keys(players).length + 1
+  players[newPlayerIndex] = {
+    score: 0
+  }
+  drawPlayers(newPlayerIndex)
 }
 
-function reset(){
-  score1 = 0
-  score2 = 0
-  draw()
+function drawScore() {
+  for (let player in players) {
+    let score = players[player].score
+    let playerElement = document.getElementById(player)
+    playerElement.innerHTML = score
+  }
 }
 
-draw()
+function drawPlayers() {
+  let template = ''
+  for (p in players) {
+    template += `
+      <div class="col">
+        <div class="card-body">
+            <div class="d-flex flex-row justify-content-between">
+                <div>
+                    <h6>Player ${p}</h6>
+                </div>
+              <div>
+            <button class="btn btn-danger" onclick="modifyScore('${p}', '-')">-</button>
+            <span id="${p}">0</span>
+            <button class="btn btn-success" onclick="modifyScore('${p}', '+')">+</button>
+            </div>
+          </div>
+        </div>
+      </div>`
+  }
+  document.getElementById('players').innerHTML = template
+  drawScore()
+}
+
