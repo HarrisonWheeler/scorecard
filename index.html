@@ -16,37 +16,83 @@
 </head>
 
 <main class="container-fluid">
-  <div class="row row-height">
-    <div class="col-md-6 border rounded shadow">
-      <div class="row h-25 text-center">
-        <h2>Player 1</h2>
-      </div>
-      <div class="row h-50 text-center">
-        <h2>Score: <span id="score1"></span></h2>
-      </div>
-      <div class="row h-25 text-center">
-        <div class="col">
-          <button class="btn btn-success" onclick="increaseScore('1')">Score ++</button>
-        </div>
+  <div class="row bg-danger">
+    <div class="col-md-3 text-light">
+      <div>
+        <p>
+          Players: <span></span>
+        </p>
+        <p>
+          Total Points: <span></span>
+        </p>
       </div>
     </div>
-    <div class="col-md-6 border rounded shadow">
-      <div class="row h-25 text-center">
-        <h2>Player 2</h2>
-      </div>
-      <div class="row h-50 text-center">
-        <h2>Score: <span id="score2"></span></h2>
-      </div>
-      <div class="row h-25 text-center">
-        <div class="col">
-          <button class="btn btn-success" onclick="increaseScore('2')">Score ++</button>
-        </div>
-      </div>
+    <div class="col-md-6 text-light text-center">
+      <h2>SCOREBOARD</h2>
+    </div>
+    <div class="col-md-3">
+      <!-- Maybe a timer or something here? -->
     </div>
   </div>
-  <div class="row mt-4">
-    <div class="col text-center">
-      <button class="btn btn-lg btn-danger" onclick="reset()">Reset</button>
+  <!-- Player sections -->
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex flex-row justify-content-between">
+            <div>
+              <h6>Justin Carpenter</h6>
+            </div>
+            <div>
+              <button class="btn btn-danger">-</button>
+              <span>0</span>
+              <button class="btn btn-success">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex flex-row justify-content-between">
+            <div>
+              <h6>Harrison Wheeler</h6>
+            </div>
+            <div>
+              <button class="btn btn-danger">-</button>
+              <span>0</span>
+              <button class="btn btn-success">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex flex-row justify-content-between">
+            <div>
+              <h6>John Cena</h6>
+            </div>
+            <div>
+              <button class="btn btn-danger">-</button>
+              <span>0</span>
+              <button class="btn btn-success">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex flex-row justify-content-between">
+            <div>
+              <h6>Kurtis Eberhardt</h6>
+            </div>
+            <div>
+              <button class="btn btn-danger">-</button>
+              <span>0</span>
+              <button class="btn btn-success">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
